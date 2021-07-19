@@ -56,8 +56,13 @@ function renderBooks(books) {
 const url = "https://anapioficeandfire.com/api/characters/1031"; 
 function fetchCharacter() {
   return fetch("https://anapioficeandfire.com/api/characters/1031")
-  .then(response => response.json())
-  .then(data => renderCharacter(data)); 
+  // .then(response => response.json())
+  // .then(data => renderCharacter(data));
+  .then(function(response) {
+    return response.json();
+  }) .then(function(data) {
+    return renderCharacter(data)
+  })
 }
 
 function renderCharacter(character) {
